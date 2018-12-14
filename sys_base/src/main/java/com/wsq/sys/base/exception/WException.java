@@ -38,6 +38,11 @@ public class WException extends Exception {
 		this.println();
 	}
 
+	public WException(MsgCode code){
+		this.code = code.getCode();
+		this.desc = MsgCode.getMsg(this.code);
+		this.println();
+	}
 	/**
 	 * 
 	 * @param msgcod 错误代码

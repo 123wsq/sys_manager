@@ -15,7 +15,7 @@
 		<result property="create_time"              column="create_time"/>
 	</resultMap>
 
-	<select  id="selectUserInfo" parameterType="java.lang.String" resultMap="userInfo">
+	<select  id="selectUserInfo" parameterType="java.util.Map" resultMap="userInfo">
 		SELECT
 			*
 		FROM
@@ -23,6 +23,42 @@
 		WHERE 1=1
 		<include refid="where_sql"/>
 	</select>
+	<update id="updateUser" parameterType="java.util.Map">
+		UPDATE 
+		 	sys_user
+		 <set>
+		 	
+			<if test="username != null and username != ''">
+				 username = #{username}	,
+			</if>
+			<if test="nickname != null and nickname != ''">
+				 nickname = #{nickname}	,
+			</if>
+			<if test="password != null and password != ''">
+				 password = #{password}	,
+			</if>
+			<if test="mobile != null and mobile != ''">
+				 mobile = #{mobile}	,
+			</if>
+			<if test="email != null and email != ''">
+				 email = #{email}	,
+			</if>
+			<if test="header != null and header != ''">
+				 header = #{header}	,
+			</if>
+			<if test="state != null and state != ''">
+				 state = #{state}	,
+			</if>
+			<if test="login_count != null and login_count != ''">
+				 login_count = login_count+#{login_count}	,
+			</if>
+		 </set>
+		 WHERE 1=1
+		<include refid="where_sql"/>
+		 	
+	</update>
+	
+	
 	
 	<sql id="where_sql">
 		<if test="user_id != null and user_id != ''">
@@ -30,6 +66,9 @@
 		</if>
 		<if test="username != null and username != ''">
 				AND username = #{username}	
+		</if>
+		<if test="password != null and password != ''">
+				AND password = #{password}	
 		</if>
 		<if test="nickname != null and nickname != ''">
 				AND nickname = #{nickname}	

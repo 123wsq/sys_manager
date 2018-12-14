@@ -5,8 +5,8 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/res_manager"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/res_auth"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources/res_auth"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources/res_manager"/>
         <dependent-module archiveName="sys_auth-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/sys_auth/sys_auth">
             <dependency-type>uses</dependency-type>
         </dependent-module>

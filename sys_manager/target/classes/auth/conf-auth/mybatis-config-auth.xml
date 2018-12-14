@@ -9,6 +9,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
    		<!-- BEAN别名 -->
    		
     	<typeAlias alias="SysUserInfo"   type="com.wsq.sys.auth.bean.SysUserInfo" />
+    	<typeAlias alias="LoginRecordInfo"   type="com.wsq.sys.auth.bean.LoginRecordInfo" />
     	
     </typeAliases>
 </configuration>

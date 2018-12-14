@@ -15,6 +15,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.wsq.sys.auth.bean.UAI;
+import com.wsq.sys.auth.bean.UserAppSession;
+
 
 /**
  * 权限拦截
@@ -67,19 +70,32 @@ public class UserLogInterceptor implements HandlerInterceptor {
 	  if(obj==null){ 
           //超时 01
 		  log.info("登陆拦截-SESSION已过期.");
-//		  pageRedirect(request,response,"01");
-		  //运营系统的登录（测试环境）
-//		       response.sendRedirect("http://172.20.100.12:8092/posm/login.jsp");
-		  //运营系统的登录（生产环境）
-			  response.sendRedirect("http://172.20.100.10:8092/posm/login.jsp");
-		  //代理商系统的登录（测试环境）
-			//  response.sendRedirect("http://172.20.100.12:8092/posa");
-		  //代理商系统的登录（生产环境）
-//			  response.sendRedirect("http://103.47.137.51:8092/posa/");
+
 		  return false;
 	  }else{
-		 log.debug("拦截了");
-		 return false;
+		  UAI uAI=(UAI) obj;
+		  String UID=uAI.getId();
+		  String userId=uAI.getUserId();
+		  if(UserAppSession.getUserMap().containsKey(uAI.getId())){
+				HttpSession hs = UserAppSession.getUserMap().get(uAI.getId());
+				String rd = ((UAI)hs.getAttribute("UID")).getUserRandom();
+				log.info("用户随机码Random1:{},Random2:{}",rd,uAI.getUserRandom());
+				/*
+				if(!(rd.equals(uAI.getUserRandom()))){	
+					log.info("用户在别处登陆,SESSION移除:{},{}",uAI.getId(),uAI.toString());
+					request.getSession().invalidate();
+					//踢出 02
+				  pageRedirect(request,response,"02");
+				  return false;
+				}*/
+			}
+		  if(UID==null||userId.equals("")){
+			  
+			  return false;
+		  }else{
+			  log.info("登陆拦截-结束-已登录");
+			  return true;
+		  }
 	  }
 	   
 	  

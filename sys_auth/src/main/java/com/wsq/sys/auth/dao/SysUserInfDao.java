@@ -15,5 +15,11 @@ public interface SysUserInfDao {
 	 */
 	public List<SysUserInfo> selectUserInfo(Map<String, Object> param);
 	
+	/**
+	 * 更新用户信息
+	 * @param param
+	 */
+	public void updateUser(Map<String, Object> param);
+	
 
 }

@@ -11,7 +11,7 @@
 	<!-- 扫描trans（trans层注入） -->
     <context:component-scan base-package="com.wsq.sys.auth.trans"/>  
     
-	<bean id="mpbaseConfig" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+	<bean id="authConfig" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
 		<property name="locations">
 			<list>
 				<value>classpath:auth/conf-auth/auth.properties</value>
@@ -20,6 +20,6 @@
 	</bean>
 	
 	<!-- spring系统启动以后，加载该类，查询所有数据 	-->
-	
+	<bean class="com.wsq.sys.auth.init.InitAuthDataListener" /> 
 	
 </beans>

@@ -114,5 +114,22 @@ public class SysUserInfo {
 	}
 	
 	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "{"
+				+ "id="+id+", "
+				+ "user_id="+user_id+", "
+				+ "username="+username+", "
+				+ "nickname="+nickname+", "
+				+ "password="+password+", "
+				+ "email="+email+", "
+				+ "mobile="+mobile+", "
+				+ "header="+header+", "
+				+ "state="+state+", "
+				+ "login_count="+login_count+", "
+				+ "create_time="+create_time+", "
+				+ "}";
+	}
 
 }

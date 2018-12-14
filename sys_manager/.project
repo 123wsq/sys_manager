@@ -16,12 +16,12 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>org.eclipse.m2e.core.maven2Builder</name>
+			<name>org.eclipse.wst.validation.validationbuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>org.eclipse.wst.validation.validationbuilder</name>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
@@ -36,14 +36,14 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>res_auth</name>
+			<name>src/main/resources/res_auth</name>
 			<type>2</type>
-			<location>/Users/wsq/Documents/program/java/workspace/sys_res/res_auth</location>
+			<location>E:/java/sys_manager/sys_res/res_auth</location>
 		</link>
 		<link>
-			<name>res_manager</name>
+			<name>src/main/resources/res_manager</name>
 			<type>2</type>
-			<location>/Users/wsq/Documents/program/java/workspace/sys_res/res_manager</location>
+			<location>E:/java/sys_manager/sys_res/res_manager</location>
 		</link>
 	</linkedResources>
 </projectDescription>

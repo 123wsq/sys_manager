@@ -96,77 +96,7 @@
    	  <property name="useGloalDataSourceStat" value="true" />
 	</bean>
 	
-	<bean id="dataSourceOracle" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close" >
-	    <property name="driverClassName">
-	      <value>${jdbc_driverClassName_Oracle}</value>
-	    </property>
-	    <property name="url">
-	      <value>${jdbc_url_oracle}</value>
-	    </property>
-	    <property name="username">
-	      <value>${jdbc_username_oracle}</value>
-	    </property>
-	    <property name="password">
-	      <value>${jdbc_password_oracle}</value>
-	    </property>
-	    <!-- 连接池最大使用连接数 -->
-	    <property name="maxActive">
-	      <value>8</value>
-	    </property>
-	    <!-- 初始化连接大小 -->
-	    <property name="initialSize">
-	      <value>8</value>
-	    </property>
-	    <!-- 获取连接最大等待时间 -->
-	    <property name="maxWait">
-	      <value>${jdbc_maxWait}</value>
-	    </property>
-	    <!-- 连接池最小空闲 -->
-	    <property name="minIdle">
-	      <value>4</value>
-	    </property>
-	    <!-- 自动清除无用连接 -->
-	    <property name="removeAbandoned">
-	      <value>${jdbc_removeAbandoned}</value>
-	    </property>
-	    <!-- 清除无用连接的等待时间 -->
-	    <property name="removeAbandonedTimeout">
-	      <value>${jdbc_removeAbandonedTimeout}</value>
-	    </property>
-	    <property name="timeBetweenEvictionRunsMillis">
-	      <value>${jdbc_timeBetweenEvictionRunsMillis}</value>
-	    </property>
-	    <property name="minEvictableIdleTimeMillis">
-	      <value>${jdbc_minEvictableIdleTimeMillis}</value>
-	    </property>
-	    <property name="validationQuery">
-	      <value>${jdbc_validationQuery}</value>
-	    </property>
-	    <property name="testWhileIdle">
-	      <value>${jdbc_testWhileIdle}</value>
-	    </property>
-	    <property name="testOnBorrow">
-	      <value>${jdbc_testOnBorrow}</value>
-	    </property>
-	    <property name="testOnReturn">
-	      <value>${jdbc_testOnReturn}</value>
-	    </property>
-	    <property name="logAbandoned">
-	      <value>${jdbc_logAbandoned}</value>
-	    </property> 
-	    <!-- 连接属性 -->
-	    <property name="connectionProperties">
-	      	<value>${jdbc_connectionProperties}</value>
-	    </property>
-	    
-	   <!-- 以下是连接池监控配置信息 -->
-	   <property name="proxyFilters">
-        	<list>
-           		 <ref bean="stat-filter" />
-        	</list>
-   	  </property>
-   	  <property name="useGloalDataSourceStat" value="true" />
-	</bean>
+	
     
 	<!-- 对数据源进行事务管理 -->
 	<bean name="transactionManager" 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wsq.sys.auth.dao.LoginRecordDao">
+	<resultMap  type="LoginRecordInfo"  id="loginRecord">
+		<result property="id"               		column="id"/>
+		<result property="user_id"               	column="user_id"/>
+		<result property="address"               	column="address"/>
+		<result property="create_time"              column="create_time"/>
+	</resultMap>
+
+	<insert id="insertLoginRecord" parameterType="LoginRecordInfo">
+		INSERT
+			INTO
+			sys_record_login
+			(user_id, address, create_time)
+			VALUES
+			(#{user_id}, #{address}, #{create_time})
+	</insert>
+</mapper>

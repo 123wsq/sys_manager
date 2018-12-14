@@ -7,7 +7,7 @@ function login(form){
 	var data = $form.serializeArray();
 	for(var i= 0; i< data.length; i++){
 		console.log(data[i])
-		if(data[i].name=='userPwd'){
+		if(data[i].name=='password'){
 			data[i].value = hex_md5(data[i].value).toUpperCase();
 		}
 	}

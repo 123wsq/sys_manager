@@ -13,14 +13,12 @@
     http://www.springframework.org/schema/tx
     http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
     http://www.springframework.org/schema/aop
-    http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
-    http://www.springframework.org/schema/util 
-    http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+    http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 
 
 	 <!-- 模块spring-mybatis配置文件导入 -->
      <!-- web -->
-     <import resource="classpath:manager/conf-manager/spring-mybatis.xml"/>	 
+     <import resource="classpath:manager/conf/spring-mybatis.xml"/>	 
      <!-- auth 权限模块 -->
      <import resource="classpath:auth/conf-auth/spring-mybatis-auth.xml"/>
     
